@@ -129,7 +129,7 @@ export const useGetMovieQuery = (id: IdParam) => {
   const queryData = useQuery<Movie, ResponseError>(['movie', { id }], async () => {
     const response = await axiosTMDB.request<Movie>({
       params: {
-        path: `movie/${id}`,
+        path: `movie/${id}?language=de`,
         append_to_response: 'videos,credits,release_dates',
       },
     });
